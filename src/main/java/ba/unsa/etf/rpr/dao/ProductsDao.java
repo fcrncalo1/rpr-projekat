@@ -1,10 +1,12 @@
 package ba.unsa.etf.rpr.dao;
 
+import ba.unsa.etf.rpr.domain.Products;
+
 import java.util.List;
 
-public interface ProductsDao extends Dao {
+public interface ProductsDao extends Dao<Products> {
 
-    List getByBrandName(String name);
+    List<Products> getByBrandName(String name);
 
-    List getByPriceRange(Double min, Double max);
+    List<Products> getByPriceRange(Double min, Double max);
 }
