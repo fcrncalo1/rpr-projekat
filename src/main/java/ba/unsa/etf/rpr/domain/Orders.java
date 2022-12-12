@@ -29,7 +29,7 @@ public class Orders {
         return orderDate;
     }
 
-    public void setDate(Date date) {
+    public void setOrderDate(Date date) {
         this.orderDate = date;
     }
 
