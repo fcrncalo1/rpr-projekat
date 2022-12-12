@@ -140,6 +140,7 @@ public class UsersDaoSQLImpl implements UsersDao {
         List<Users> users = new ArrayList<>();
         try {
             PreparedStatement stmt = this.connection.prepareStatement(query);
+            stmt.setString(1,name);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Users user = new Users();
