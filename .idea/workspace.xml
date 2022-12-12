@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ec10cb1-a2c5-4bf8-8bec-59f6030661e3" name="Changes" comment="Added Users class for the domain model">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/domain/Products.java" afterDir="false" />
+    <list default="true" id="7ec10cb1-a2c5-4bf8-8bec-59f6030661e3" name="Changes" comment="Added Products class for the domain model">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/domain/Orders.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670807919221</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added Products class for the domain model">
+      <created>1670808182940</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1670808182940</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +126,7 @@
     <MESSAGE value="Added OrdersDao interface" />
     <MESSAGE value="Added OrderItemsDao interface" />
     <MESSAGE value="Added Users class for the domain model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Users class for the domain model" />
+    <MESSAGE value="Added Products class for the domain model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Products class for the domain model" />
   </component>
 </project>
