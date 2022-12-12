@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ec10cb1-a2c5-4bf8-8bec-59f6030661e3" name="Changes" comment="Added OrderItemsDao interface">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/domain/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7ec10cb1-a2c5-4bf8-8bec-59f6030661e3" name="Changes" comment="Added Users class for the domain model">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/domain/Products.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670806761172</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Users class for the domain model">
+      <created>1670807919221</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670807919221</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +118,7 @@
     <MESSAGE value="Added ProductsDao interface" />
     <MESSAGE value="Added OrdersDao interface" />
     <MESSAGE value="Added OrderItemsDao interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added OrderItemsDao interface" />
+    <MESSAGE value="Added Users class for the domain model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Users class for the domain model" />
   </component>
 </project>
