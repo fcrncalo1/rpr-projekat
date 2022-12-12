@@ -1,4 +1,5 @@
 package ba.unsa.etf.rpr.dao;
 
-public interface OrderItemsDao extends Dao {
+import ba.unsa.etf.rpr.domain.OrderItems;
+public interface OrderItemsDao extends Dao<OrderItems> {
 }
