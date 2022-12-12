@@ -7,7 +7,7 @@ public class Orders {
 
     private int id;
     private int userId;
-    private Date date;
+    private Date orderDate;
 
     public int getId() {
         return id;
@@ -25,12 +25,12 @@ public class Orders {
         this.userId = userId;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getOrderDate() {
+        return orderDate;
     }
 
     public void setDate(Date date) {
-        this.date = date;
+        this.orderDate = date;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Orders {
         return "Orders{" +
                 "id=" + id +
                 ", userId=" + userId +
-                ", date=" + date +
+                ", date=" + orderDate +
                 '}';
     }
 
@@ -52,6 +52,6 @@ public class Orders {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userId, date);
+        return Objects.hash(id, userId, orderDate);
     }
 }
