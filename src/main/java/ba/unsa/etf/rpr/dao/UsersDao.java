@@ -1,9 +1,11 @@
 package ba.unsa.etf.rpr.dao;
 
+import ba.unsa.etf.rpr.domain.Users;
+
 import java.util.List;
 
-public interface UsersDao extends Dao {
+public interface UsersDao extends Dao<Users> {
 
-    List getByName(String name);
+    List<Users> getByName(String name);
 
 }
