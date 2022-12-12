@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ec10cb1-a2c5-4bf8-8bec-59f6030661e3" name="Changes" comment="Added SQL implementation for UsersDao">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/ProductsDaoSQLImpl.java" afterDir="false" />
+    <list default="true" id="7ec10cb1-a2c5-4bf8-8bec-59f6030661e3" name="Changes" comment="Small change to Orders class v2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/OrdersDaoSQLImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/UsersDaoSQLImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/dao/UsersDaoSQLImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +155,35 @@
       <option name="project" value="LOCAL" />
       <updated>1670846184708</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Small fix to UsersDaoSQLImpl">
+      <created>1670847722038</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1670847722038</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added SQL implementation of ProductsDao">
+      <created>1670847906318</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1670847906318</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Small change to Orders class">
+      <created>1670849297813</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1670849297813</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Small change to Orders class v2">
+      <created>1670849380912</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1670849380912</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,6 +212,10 @@
     <MESSAGE value="Small change to ProductsDao" />
     <MESSAGE value="Small change to UsersDao" />
     <MESSAGE value="Added SQL implementation for UsersDao" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added SQL implementation for UsersDao" />
+    <MESSAGE value="Small fix to UsersDaoSQLImpl" />
+    <MESSAGE value="Added SQL implementation of ProductsDao" />
+    <MESSAGE value="Small change to Orders class" />
+    <MESSAGE value="Small change to Orders class v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small change to Orders class v2" />
   </component>
 </project>
