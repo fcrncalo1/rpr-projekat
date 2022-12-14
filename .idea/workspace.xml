@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ec10cb1-a2c5-4bf8-8bec-59f6030661e3" name="Changes" comment="Added SQL implementation of OrderItemsDao">
+    <list default="true" id="7ec10cb1-a2c5-4bf8-8bec-59f6030661e3" name="Changes" comment="Put .idea folder in .gitignore">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670850628288</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Put .idea folder in .gitignore">
+      <created>1671041861295</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1671041861295</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,6 +238,7 @@
     <MESSAGE value="Small change to Orders class v2" />
     <MESSAGE value="Added SQL implementation of OrdersDao" />
     <MESSAGE value="Added SQL implementation of OrderItemsDao" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added SQL implementation of OrderItemsDao" />
+    <MESSAGE value="Put .idea folder in .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Put .idea folder in .gitignore" />
   </component>
 </project>
