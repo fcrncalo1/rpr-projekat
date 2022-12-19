@@ -86,7 +86,7 @@
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>ba.unsa.etf.rpr.App</mainClass>
+                <mainClass>ba.unsa.etf.rpr.AppFX</mainClass>
               </manifest>
             </archive>
           </configuration>
