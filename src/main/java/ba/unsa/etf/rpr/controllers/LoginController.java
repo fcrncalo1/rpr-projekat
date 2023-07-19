@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -16,6 +17,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class LoginController {
     public TextField fieldUsername;
+    public PasswordField fieldPassword;
 
     @FXML
     public void initialize() {
@@ -32,10 +34,22 @@ public class LoginController {
                 }
             }
         });
+        fieldPassword.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                if (fieldPassword.getText().trim().isEmpty()) {
+                    fieldPassword.getStyleClass().removeAll("poljeJeIspravno");
+                    fieldPassword.getStyleClass().add("poljeNijeIspravno");
+                } else {
+                    fieldPassword.getStyleClass().removeAll("poljeNijeIspravno");
+                    fieldPassword.getStyleClass().add("poljeJeIspravno");
+                }
+            }
+        });
     }
 
     public void loginBttnClick(ActionEvent actionEvent) throws IOException {
-        if (fieldUsername.getText().isEmpty()) {
+        if (fieldUsername.getText().isEmpty() || fieldPassword.getText().isEmpty()) {
             return;
         }
         Stage stage = new Stage();
