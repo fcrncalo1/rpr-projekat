@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
 
-public class OrderItems {
+public class OrderItems implements Idable{
 
     private int id;
     private int orderId;

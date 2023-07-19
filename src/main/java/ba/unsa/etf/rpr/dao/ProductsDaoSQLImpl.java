@@ -1,122 +1,21 @@
 package ba.unsa.etf.rpr.dao;
 
+import ba.unsa.etf.rpr.domain.Orders;
 import ba.unsa.etf.rpr.domain.Products;
 import ba.unsa.etf.rpr.domain.Users;
 
 import java.sql.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
-public class ProductsDaoSQLImpl implements ProductsDao {
+public class ProductsDaoSQLImpl extends AbstractDao<Products> implements ProductsDao {
 
     private Connection connection;
 
     public ProductsDaoSQLImpl() {
-        try {
-            this.connection = DriverManager.getConnection("jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7582897","sql7582897","z2bc7SG6Nh");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public Products getById(int id) {
-        String query = "SELECT * FROM products WHERE product_id = ?";
-        try {
-            PreparedStatement stmt = this.connection.prepareStatement(query);
-            stmt.setInt(1,id);
-            ResultSet rs = stmt.executeQuery();
-            if(rs.next()) {
-                Products product = new Products();
-                product.setId(rs.getInt("product_id"));
-                product.setName(rs.getString("name"));
-                product.setPrice(rs.getDouble("price"));
-                product.setQuantity(rs.getInt("quantity"));
-                rs.close();
-                return product;
-            }
-            else return null;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    @Override
-    public Products add(Products item) {
-        String insert = "INSERT INTO products(name,price,quantity) VALUES(?)";
-
-        try {
-            PreparedStatement stmt = this.connection.prepareStatement(insert,Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1,item.getName());
-            stmt.setDouble(2,item.getPrice());
-            stmt.setInt(3,item.getQuantity());
-            stmt.executeUpdate();
-
-            ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            item.setId(rs.getInt(1));
-            return item;
-        } catch (SQLException exception) {
-            exception.printStackTrace();
-        }
-        return null;
-    }
-
-    @Override
-    public Products update(Products item) {
-        String updt = "UPDATE products SET name = ?, price = ?, quantity = ? WHERE product_id = ?";
-        try {
-            PreparedStatement stmt = this.connection.prepareStatement(updt,Statement.RETURN_GENERATED_KEYS);
-            stmt.setObject(1,item.getName());
-            stmt.setObject(2,item.getPrice());
-            stmt.setObject(3,item.getQuantity());
-            stmt.setObject(4,item.getId());
-            stmt.executeUpdate();
-            return item;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    @Override
-    public void delete(int id) {
-        String dlt = "DELETE FROM products WHERE product_id = ?";
-        try {
-            PreparedStatement stmt = this.connection.prepareStatement(dlt,Statement.RETURN_GENERATED_KEYS);
-            stmt.setObject(1,id);
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public List<Products> getAll() {
-        String query = "SELECT * FROM products";
-        List<Products> products = new ArrayList<>();
-        try {
-            PreparedStatement stmt = this.connection.prepareStatement(query);
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
-                Products product = new Products();
-                product.setId(rs.getInt("product_id"));
-                product.setName(rs.getString("name"));
-                product.setPrice(rs.getDouble("price"));
-                product.setQuantity(rs.getInt("quantity"));
-                products.add(product);
-            }
-            rs.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return products;
-    }
-
-    @Override
-    public List<Products> getByBrandName(String name) {
-        return null;
+        super("products");
     }
 
     @Override
@@ -141,5 +40,29 @@ public class ProductsDaoSQLImpl implements ProductsDao {
             e.printStackTrace();
         }
         return products;
+    }
+
+    @Override
+    public Products row2object(ResultSet rs) throws SQLException {
+        try {
+            Products products = new Products();
+            products.setId(rs.getInt("id"));
+            products.setName(rs.getString("name"));
+            products.setPrice(rs.getDouble("price"));
+            products.setQuantity(rs.getInt("quantity"));
+            return products;
+        } catch (SQLException e) {
+            throw new SQLException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public Map<String, Object> object2row(Products object) {
+        Map<String, Object> row = new TreeMap<String, Object>();
+        row.put("id", object.getId());
+        row.put("name", object.getName());
+        row.put("price", object.getPrice());
+        row.put("quantity", object.getQuantity());
+        return row;
     }
 }
