@@ -27,7 +27,7 @@ public class ProductsDaoSQLImpl extends AbstractDao<Products> implements Product
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Products product = new Products();
-                product.setId(rs.getInt("product_id"));
+                product.setId(rs.getInt("id"));
                 product.setName(rs.getString("name"));
                 product.setPrice(rs.getDouble("price"));
                 product.setQuantity(rs.getInt("quantity"));

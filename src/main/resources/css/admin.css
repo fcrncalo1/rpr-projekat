@@ -1,0 +1,10 @@
+.menuButton{
+    -fx-background-color :  #501B1D;
+    -fx-text-fill : white;
+}
+.menuButton:hover {
+    -fx-background-color: #868da6;
+}
+.menuButton:pressed{
+    -fx-background-color: #474E68;
+}

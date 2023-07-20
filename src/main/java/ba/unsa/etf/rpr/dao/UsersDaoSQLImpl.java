@@ -26,13 +26,13 @@ public class UsersDaoSQLImpl extends AbstractDao<Users> implements UsersDao {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Users user = new Users();
-                user.setId(rs.getInt("user_id"));
+                user.setId(rs.getInt("id"));
                 user.setFirstName(rs.getString("first_name"));
                 user.setLastName(rs.getString("last_name"));
                 user.setEmail(rs.getString("email"));
                 user.setCity(rs.getString("city"));
                 user.setAddress(rs.getString("address"));
-                user.setMobileNumber(rs.getString("mob_num"));
+                user.setMobileNumber(rs.getString("number"));
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 users.add(user);
@@ -46,7 +46,7 @@ public class UsersDaoSQLImpl extends AbstractDao<Users> implements UsersDao {
 
     @Override
     public Users getByUsername(String username) {
-        String query = "SELECT * FROM Users WHERE username = ?";
+        String query = "SELECT * FROM users WHERE username = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, username);
@@ -74,7 +74,7 @@ public class UsersDaoSQLImpl extends AbstractDao<Users> implements UsersDao {
             users.setEmail(rs.getString("email"));
             users.setCity(rs.getString("city"));
             users.setAddress(rs.getString("address"));
-            users.setMobileNumber(rs.getString("mobile_number"));
+            users.setMobileNumber(rs.getString("number"));
             users.setUsername(rs.getString("username"));
             users.setPassword(rs.getString("password"));
             return users;
@@ -92,7 +92,7 @@ public class UsersDaoSQLImpl extends AbstractDao<Users> implements UsersDao {
         row.put("email", object.getEmail());
         row.put("city", object.getCity());
         row.put("address", object.getAddress());
-        row.put("mobile_number", object.getMobileNumber());
+        row.put("number", object.getMobileNumber());
         row.put("username", object.getUsername());
         row.put("password", object.getPassword());
         return row;

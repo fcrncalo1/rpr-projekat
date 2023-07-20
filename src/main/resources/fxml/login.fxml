@@ -21,13 +21,15 @@
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+      <RowConstraints valignment="CENTER" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Label alignment="CENTER" text="Username:" />
       <TextField fx:id="fieldUsername" GridPane.columnIndex="1" />
       <Label text="Password:" GridPane.rowIndex="1" />
-      <Button fx:id="loginBttn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loginBttnClick" prefHeight="26.0" prefWidth="247.0" text="Login" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <Button fx:id="loginBttn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loginBttnClick" prefHeight="26.0" prefWidth="247.0" text="Login" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+      <Label fx:id="wrongCredentialsLabel" text="Invalid credentials!" textAlignment="CENTER" textFill="#e10606" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <PasswordField fx:id="fieldPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
    </children>
    <padding>

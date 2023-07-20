@@ -27,7 +27,7 @@ public class OrdersDaoSQLImpl extends AbstractDao<Orders> implements OrdersDao {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Orders order = new Orders();
-                order.setId(rs.getInt("order_id"));
+                order.setId(rs.getInt("id"));
                 order.setUserId(rs.getInt("user_id"));
                 order.setOrderDate(rs.getDate("order_date"));
                 orders.add(order);
