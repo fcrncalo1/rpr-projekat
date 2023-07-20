@@ -11,7 +11,6 @@ import java.util.TreeMap;
 
 public class UsersDaoSQLImpl extends AbstractDao<Users> implements UsersDao {
 
-    private Connection connection;
 
     public UsersDaoSQLImpl() {
         super("users");
@@ -22,7 +21,7 @@ public class UsersDaoSQLImpl extends AbstractDao<Users> implements UsersDao {
         String query = "SELECT * FROM users WHERE first_name = ?";
         List<Users> users = new ArrayList<>();
         try {
-            PreparedStatement stmt = this.connection.prepareStatement(query);
+            PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1,name);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
@@ -43,6 +42,26 @@ public class UsersDaoSQLImpl extends AbstractDao<Users> implements UsersDao {
             e.printStackTrace();
         }
         return users;
+    }
+
+    @Override
+    public Users getByUsername(String username) {
+        String query = "SELECT * FROM Users WHERE username = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, username);
+            ResultSet resultSet = stmt.executeQuery();
+            if (resultSet.next()){
+                Users user = row2object(resultSet);
+                resultSet.close();
+                return user;
+            }
+            return null;
+
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override

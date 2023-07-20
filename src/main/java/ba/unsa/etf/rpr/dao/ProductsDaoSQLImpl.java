@@ -12,8 +12,6 @@ import java.util.TreeMap;
 
 public class ProductsDaoSQLImpl extends AbstractDao<Products> implements ProductsDao {
 
-    private Connection connection;
-
     public ProductsDaoSQLImpl() {
         super("products");
     }
@@ -23,7 +21,7 @@ public class ProductsDaoSQLImpl extends AbstractDao<Products> implements Product
         String query = "SELECT * FROM products WHERE price BETWEEN ? AND ?";
         List<Products> products = new ArrayList<>();
         try {
-            PreparedStatement stmt = this.connection.prepareStatement(query);
+            PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setDouble(1,min);
             stmt.setDouble(2,max);
             ResultSet rs = stmt.executeQuery();
