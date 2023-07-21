@@ -28,6 +28,7 @@ public class LoginController {
     public void initialize() {
         wrongCredentialsLabel.setVisible(false);
         fieldUsername.getStyleClass().add("poljeNijeIspravno");
+        fieldPassword.getStyleClass().add("poljeNijeIspravno");
         fieldUsername.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
