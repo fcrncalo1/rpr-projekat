@@ -9,9 +9,12 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
 <BorderPane prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.AdminController">
     <stylesheets>
-        <URL value="@../css/admin.css" />
+        <URL value="@../css/dashboard.css" />
     </stylesheets>
     <top>
       <HBox prefHeight="56.0" prefWidth="600.0" style="-fx-background-color: #501B1D;" BorderPane.alignment="CENTER">
@@ -28,16 +31,19 @@
       </HBox>
    </top>
    <center>
-      <GridPane style="-fx-background-color: #83677B;" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-      </GridPane>
+       <Pane fx:id="mainPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #83677B;" BorderPane.alignment="CENTER">
+           <children>
+               <Label fx:id="welcomeLabel1" layoutX="247.0" layoutY="119.0" text="Welcome!" textFill="WHITE">
+                   <font>
+                       <Font size="24.0" />
+                   </font>
+               </Label>
+               <Label fx:id="welcomeLabel2" layoutX="155.0" layoutY="155.0" text="What would you like to do?" textFill="WHITE">
+                   <font>
+                       <Font size="24.0" />
+                   </font>
+               </Label>
+           </children>
+       </Pane>
    </center>
 </BorderPane>

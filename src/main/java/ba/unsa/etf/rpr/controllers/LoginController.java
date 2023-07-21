@@ -77,6 +77,11 @@ public class LoginController {
             Parent root = loader.load();
             scene = new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
         }
+        else {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/guest.fxml"));
+            Parent root = loader.load();
+            scene = new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
+        }
         stage.setTitle("Welcome");
         stage.setScene(scene);
         stage.setResizable(false);
