@@ -22,9 +22,40 @@ public class OrderItemsModel {
         orderItems.setAmount(this.amount.getValue());
         return orderItems;
     }
-    public SimpleIntegerProperty amountProperty() { return this.amount; }
-    public Orders getOrder() { return this.order.get(); }
-    public void setOrder(Orders orders) { this.order.set(orders);}
-    public Products getProduct() { return this.product.get(); }
-    public void setProduct(Products p) { this.product.set(p);}
+
+    public Orders getOrder() {
+        return order.get();
+    }
+
+    public SimpleObjectProperty<Orders> orderProperty() {
+        return order;
+    }
+
+    public void setOrder(Orders order) {
+        this.order.set(order);
+    }
+
+    public Products getProduct() {
+        return product.get();
+    }
+
+    public SimpleObjectProperty<Products> productProperty() {
+        return product;
+    }
+
+    public void setProduct(Products product) {
+        this.product.set(product);
+    }
+
+    public int getAmount() {
+        return amount.get();
+    }
+
+    public SimpleIntegerProperty amountProperty() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount.set(amount);
+    }
 }

@@ -20,7 +20,28 @@ public class OrdersModel {
         orders.setOrderDate(Date.valueOf(this.orderDate.getValue()));
         return orders;
     }
-    public Users getUser() { return this.user.get(); }
-    public void setUser(Users user) { this.user.set(user); }
-    public SimpleObjectProperty orderDateProperty() { return orderDate; }
+
+    public Users getUser() {
+        return user.get();
+    }
+
+    public SimpleObjectProperty<Users> userProperty() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user.set(user);
+    }
+
+    public LocalDate getOrderDate() {
+        return orderDate.get();
+    }
+
+    public SimpleObjectProperty<LocalDate> orderDateProperty() {
+        return orderDate;
+    }
+
+    public void setOrderDate(LocalDate orderDate) {
+        this.orderDate.set(orderDate);
+    }
 }

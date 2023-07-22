@@ -23,15 +23,39 @@ public class ProductsModel {
         return p;
     }
 
+    public String getNameField() {
+        return nameField.get();
+    }
+
     public SimpleStringProperty nameFieldProperty() {
         return nameField;
+    }
+
+    public void setNameField(String nameField) {
+        this.nameField.set(nameField);
+    }
+
+    public double getPriceField() {
+        return priceField.get();
     }
 
     public SimpleDoubleProperty priceFieldProperty() {
         return priceField;
     }
 
+    public void setPriceField(double priceField) {
+        this.priceField.set(priceField);
+    }
+
+    public int getQuantityField() {
+        return quantityField.get();
+    }
+
     public SimpleIntegerProperty quantityFieldProperty() {
         return quantityField;
+    }
+
+    public void setQuantityField(int quantityField) {
+        this.quantityField.set(quantityField);
     }
 }

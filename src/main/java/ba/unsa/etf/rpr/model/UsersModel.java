@@ -36,13 +36,100 @@ public class UsersModel {
         u.setPassword(this.passwordField.getValue());
         return u;
     }
-    public SimpleStringProperty firstNameFieldProperty() { return firstNameField; }
-    public SimpleStringProperty lastNameFieldProperty() { return lastNameField; }
-    public SimpleStringProperty emailFieldProperty() { return emailField; }
-    public SimpleStringProperty cityFieldProperty() { return cityField; }
-    public SimpleStringProperty addressFieldProperty() { return addressField; }
-    public SimpleStringProperty numberFieldProperty() { return numberField; }
-    public SimpleStringProperty usernameFieldProperty() { return usernameField; }
-    public SimpleStringProperty passwordFieldProperty() { return passwordField; }
 
+    public String getFirstNameField() {
+        return firstNameField.get();
+    }
+
+    public SimpleStringProperty firstNameFieldProperty() {
+        return firstNameField;
+    }
+
+    public void setFirstNameField(String firstNameField) {
+        this.firstNameField.set(firstNameField);
+    }
+
+    public String getLastNameField() {
+        return lastNameField.get();
+    }
+
+    public SimpleStringProperty lastNameFieldProperty() {
+        return lastNameField;
+    }
+
+    public void setLastNameField(String lastNameField) {
+        this.lastNameField.set(lastNameField);
+    }
+
+    public String getEmailField() {
+        return emailField.get();
+    }
+
+    public SimpleStringProperty emailFieldProperty() {
+        return emailField;
+    }
+
+    public void setEmailField(String emailField) {
+        this.emailField.set(emailField);
+    }
+
+    public String getCityField() {
+        return cityField.get();
+    }
+
+    public SimpleStringProperty cityFieldProperty() {
+        return cityField;
+    }
+
+    public void setCityField(String cityField) {
+        this.cityField.set(cityField);
+    }
+
+    public String getAddressField() {
+        return addressField.get();
+    }
+
+    public SimpleStringProperty addressFieldProperty() {
+        return addressField;
+    }
+
+    public void setAddressField(String addressField) {
+        this.addressField.set(addressField);
+    }
+
+    public String getNumberField() {
+        return numberField.get();
+    }
+
+    public SimpleStringProperty numberFieldProperty() {
+        return numberField;
+    }
+
+    public void setNumberField(String numberField) {
+        this.numberField.set(numberField);
+    }
+
+    public String getUsernameField() {
+        return usernameField.get();
+    }
+
+    public SimpleStringProperty usernameFieldProperty() {
+        return usernameField;
+    }
+
+    public void setUsernameField(String usernameField) {
+        this.usernameField.set(usernameField);
+    }
+
+    public String getPasswordField() {
+        return passwordField.get();
+    }
+
+    public SimpleStringProperty passwordFieldProperty() {
+        return passwordField;
+    }
+
+    public void setPasswordField(String passwordField) {
+        this.passwordField.set(passwordField);
+    }
 }
