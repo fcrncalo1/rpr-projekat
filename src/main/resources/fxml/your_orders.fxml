@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane hgap="10.0" prefHeight="340.0" prefWidth="600.0" style="-fx-background-color: #83677B;" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane hgap="10.0" prefHeight="344.0" prefWidth="600.0" style="-fx-background-color: #83677B;" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" />
    </columnConstraints>
@@ -19,7 +18,7 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <TableView prefHeight="300.0" prefWidth="580.0" GridPane.rowIndex="1">
+      <TableView prefHeight="342.0" prefWidth="580.0" GridPane.rowIndex="1">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />

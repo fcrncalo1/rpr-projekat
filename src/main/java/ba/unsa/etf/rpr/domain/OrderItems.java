@@ -5,8 +5,8 @@ import java.util.Objects;
 public class OrderItems implements Idable{
 
     private int id;
-    private int orderId;
-    private int productId;
+    private Orders order;
+    private Products product;
     private int amount;
 
     public int getId() {
@@ -17,20 +17,20 @@ public class OrderItems implements Idable{
         this.id = id;
     }
 
-    public int getOrderId() {
-        return orderId;
+    public Orders getOrder() {
+        return order;
     }
 
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
+    public void setOrder(Orders order) {
+        this.order = order;
     }
 
-    public int getProductId() {
-        return productId;
+    public Products getProduct() {
+        return product;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setProduct(Products product) {
+        this.product = product;
     }
 
     public int getAmount() {
@@ -45,8 +45,8 @@ public class OrderItems implements Idable{
     public String toString() {
         return "OrderItems{" +
                 "id=" + id +
-                ", orderId=" + orderId +
-                ", productId=" + productId +
+                ", order=" + order +
+                ", product=" + product +
                 ", amount=" + amount +
                 '}';
     }
@@ -61,6 +61,6 @@ public class OrderItems implements Idable{
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, orderId, productId, amount);
+        return Objects.hash(id, order, product, amount);
     }
 }

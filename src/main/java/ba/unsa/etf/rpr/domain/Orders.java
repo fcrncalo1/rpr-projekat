@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Orders implements Idable{
 
     private int id;
-    private int userId;
+    private Users user;
     private Date orderDate;
 
     public int getId() {
@@ -17,12 +17,12 @@ public class Orders implements Idable{
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public Users getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(Users user) {
+        this.user = user;
     }
 
     public Date getOrderDate() {
@@ -37,7 +37,7 @@ public class Orders implements Idable{
     public String toString() {
         return "Orders{" +
                 "id=" + id +
-                ", userId=" + userId +
+                ", user=" + user +
                 ", date=" + orderDate +
                 '}';
     }
@@ -52,6 +52,6 @@ public class Orders implements Idable{
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userId, orderDate);
+        return Objects.hash(id, user, orderDate);
     }
 }
