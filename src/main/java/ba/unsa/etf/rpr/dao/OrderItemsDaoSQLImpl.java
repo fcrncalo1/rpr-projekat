@@ -20,8 +20,8 @@ public class OrderItemsDaoSQLImpl extends AbstractDao<OrderItems> implements Ord
         try {
             OrderItems orderItems = new OrderItems();
             orderItems.setId(rs.getInt("id"));
-            orderItems.setOrderId(rs.getInt("order_id"));
-            orderItems.setProductId(rs.getInt("product_id"));
+            orderItems.setOrder(DaoFactory.ordersDao().getById(rs.getInt("order_id")));
+            orderItems.setProduct(DaoFactory.productsDao().getById(rs.getInt("product_id")));
             orderItems.setAmount(rs.getInt("amount"));
             return orderItems;
         } catch (SQLException e) {
@@ -33,8 +33,8 @@ public class OrderItemsDaoSQLImpl extends AbstractDao<OrderItems> implements Ord
     public Map<String, Object> object2row(OrderItems object) {
         Map<String, Object> row = new TreeMap<String, Object>();
         row.put("id", object.getId());
-        row.put("order_id", object.getOrderId());
-        row.put("product_id", object.getProductId());
+        row.put("order_id", object.getOrder().getId());
+        row.put("product_id", object.getProduct().getId());
         row.put("amount", object.getAmount());
         return row;
     }

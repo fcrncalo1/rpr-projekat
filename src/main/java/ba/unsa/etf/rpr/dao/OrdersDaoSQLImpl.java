@@ -28,7 +28,7 @@ public class OrdersDaoSQLImpl extends AbstractDao<Orders> implements OrdersDao {
             while (rs.next()) {
                 Orders order = new Orders();
                 order.setId(rs.getInt("id"));
-                order.setUserId(rs.getInt("user_id"));
+                order.setUser(DaoFactory.usersDao().getById(rs.getInt("user_id")));
                 order.setOrderDate(rs.getDate("order_date"));
                 orders.add(order);
             }
@@ -44,7 +44,7 @@ public class OrdersDaoSQLImpl extends AbstractDao<Orders> implements OrdersDao {
         try {
             Orders orders = new Orders();
             orders.setId(rs.getInt("id"));
-            orders.setUserId(rs.getInt("user_id"));
+            orders.setUser(DaoFactory.usersDao().getById(rs.getInt("user_id")));
             orders.setOrderDate(rs.getDate("order_date"));
             return orders;
         } catch (SQLException e) {
@@ -56,7 +56,7 @@ public class OrdersDaoSQLImpl extends AbstractDao<Orders> implements OrdersDao {
     public Map<String, Object> object2row(Orders object) {
         Map<String, Object> row = new TreeMap<String, Object>();
         row.put("id", object.getId());
-        row.put("user_id", object.getUserId());
+        row.put("user_id", object.getUser().getId());
         row.put("order_date", object.getOrderDate());
         return row;
     }
