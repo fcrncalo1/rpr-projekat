@@ -31,14 +31,14 @@ public class ShopController {
 
     @FXML
     public void initialize() {
-        idColumn.setCellValueFactory(new PropertyValueFactory<Products,String>("id"));
-        nameColumn.setCellValueFactory(new PropertyValueFactory<Products,String>("name"));
-        priceColumn.setCellValueFactory(new PropertyValueFactory<Products,String>("price"));
-        quantityColumn.setCellValueFactory(new PropertyValueFactory<Products,String>("quantity"));
-        scIdColumn.setCellValueFactory(new PropertyValueFactory<Products,String>("id"));
-        scNameColumn.setCellValueFactory(new PropertyValueFactory<Products,String>("name"));
-        scPriceColumn.setCellValueFactory(new PropertyValueFactory<Products,String>("price"));
-        scQuantityColumn.setCellValueFactory(new PropertyValueFactory<Products,String>("quantity"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        scIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        scNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        scPriceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        scQuantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         priceText.setText("0");
         try {
             productTable.setItems(FXCollections.observableList(DaoFactory.productsDao().getAll()));
@@ -49,7 +49,7 @@ public class ShopController {
 
     public void addToCartClick(ActionEvent actionEvent) {
         Products product = (Products) productTable.getSelectionModel().getSelectedItem();
-        if(quantityText.getText().trim().isEmpty() || product.getQuantity() < Integer.parseInt(quantityText.getText()) || Integer.parseInt(quantityText.getText()) == 0)
+        if(product == null || quantityText.getText().trim().isEmpty() || product.getQuantity() < Integer.parseInt(quantityText.getText()) || Integer.parseInt(quantityText.getText()) == 0)
             return;
         product.setQuantity(Integer.parseInt(quantityText.getText()));
         shoppingCart.getItems().add(product);
@@ -59,6 +59,7 @@ public class ShopController {
 
     public void removeButtonClick(ActionEvent actionEvent) {
         Products selectedProduct = (Products) shoppingCart.getSelectionModel().getSelectedItem();
+        if (selectedProduct == null) return;
         shoppingCart.getItems().remove(shoppingCart.getSelectionModel().getSelectedItem());
         priceText.setText(String.valueOf(Double.parseDouble(priceText.getText()) - selectedProduct.getQuantity()*selectedProduct.getPrice()));
         shoppingCart.refresh();
