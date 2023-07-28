@@ -13,6 +13,8 @@ import java.io.IOException;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class AdminController {
+    public Label nameLabel;
+
     public void logoutClick(ActionEvent actionEvent) throws IOException {
         Node n = (Node) actionEvent.getSource();
         Stage stage1 = (Stage) n.getScene().getWindow();

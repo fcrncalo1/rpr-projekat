@@ -76,11 +76,15 @@ public class LoginController {
         if(user.getId() == 1){
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/admin.fxml"));
             Parent root = loader.load();
+            AdminController adminController = loader.getController();
+            adminController.nameLabel.setText(user.getUsername());
             scene = new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
         }
         else {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/guest.fxml"));
             Parent root = loader.load();
+            GuestController guestController = loader.getController();
+            guestController.nameLabel.setText(user.getUsername());
             scene = new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
         }
         stage.setTitle("Welcome");

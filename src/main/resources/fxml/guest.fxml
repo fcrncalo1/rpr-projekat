@@ -42,4 +42,10 @@
          </children>
       </Pane>
    </center>
+   <bottom>
+      <Label fx:id="nameLabel" text="Label" BorderPane.alignment="CENTER_RIGHT">
+         <padding>
+            <Insets right="5.0" />
+         </padding></Label>
+   </bottom>
 </BorderPane>

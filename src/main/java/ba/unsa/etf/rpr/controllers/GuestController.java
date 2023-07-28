@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -18,6 +19,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class GuestController {
     public BorderPane mainBorderPane;
     public Pane mainPane;
+    public Label nameLabel;
 
     public void logoutClick(ActionEvent actionEvent) throws IOException {
         Node n = (Node) actionEvent.getSource();
@@ -37,7 +39,10 @@ public class GuestController {
     }
 
     public void shopClick(ActionEvent actionEvent) throws IOException {
-        GridPane gridPane = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/shop.fxml"));
+        GridPane gridPane = loader.load();
+        ShopController shopController = loader.getController();
+        shopController.setLoggedUser(nameLabel.getText());
         gridPane.setMaxSize(Double.MAX_VALUE,Double.MAX_VALUE);
         mainBorderPane.setCenter(gridPane);
     }

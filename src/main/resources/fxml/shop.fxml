@@ -52,7 +52,7 @@
             <TextField fx:id="quantityText" prefHeight="26.0" prefWidth="37.0" />
          </children>
       </HBox>
-      <Button fx:id="createOrderButton" mnemonicParsing="false" text="Create Order" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Button fx:id="createOrderButton" mnemonicParsing="false" onAction="#createOrderClick" text="Create Order" GridPane.columnIndex="1" GridPane.rowIndex="7" />
       <Button fx:id="addToCartButton" mnemonicParsing="false" onAction="#addToCartClick" text="Add to Cart" GridPane.rowIndex="7" />
       <HBox alignment="CENTER" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
