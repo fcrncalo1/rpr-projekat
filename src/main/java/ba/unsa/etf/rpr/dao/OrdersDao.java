@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface OrdersDao extends Dao<Orders> {
 
-    List<Orders> getByDateRange(Date start, Date end);
+    List<Orders> getByUserId(int uId);
 }

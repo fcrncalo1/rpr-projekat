@@ -48,7 +48,10 @@ public class GuestController {
     }
 
     public void yourOrdersClick(ActionEvent actionEvent) throws IOException {
-        GridPane gridPane = FXMLLoader.load(getClass().getResource("/fxml/your_orders.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/your_orders.fxml"));
+        GridPane gridPane = loader.load();
+        YourOrdersController yourOrdersController = loader.getController();
+        yourOrdersController.setLoggedUser(nameLabel.getText());
         gridPane.setMaxSize(Double.MAX_VALUE,Double.MAX_VALUE);
         mainBorderPane.setCenter(gridPane);
     }

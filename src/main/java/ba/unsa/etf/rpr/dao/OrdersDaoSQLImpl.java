@@ -17,13 +17,12 @@ public class OrdersDaoSQLImpl extends AbstractDao<Orders> implements OrdersDao {
 
 
     @Override
-    public List<Orders> getByDateRange(Date start, Date end) {
-        String query = "SELECT * FROM orders WHERE order_date BETWEEN ? AND ?";
+    public List<Orders> getByUserId(int uId) {
+        String query = "SELECT * FROM orders WHERE user_id = ?";
         List<Orders> orders = new ArrayList<>();
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setDate(1, (java.sql.Date) start);
-            stmt.setDate(2, (java.sql.Date) end);
+            stmt.setInt(1, uId);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Orders order = new Orders();
