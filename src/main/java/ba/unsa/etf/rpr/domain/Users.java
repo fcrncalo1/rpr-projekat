@@ -96,17 +96,7 @@ public class Users implements Idable{
 
     @Override
     public String toString() {
-        return "Users{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", city='" + city + '\'' +
-                ", address='" + address + '\'' +
-                ", mobileNumber='" + mobileNumber + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return String.valueOf(this.id);
     }
 
     @Override
