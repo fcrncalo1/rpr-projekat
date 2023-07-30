@@ -9,17 +9,17 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.AdminController">
+<BorderPane fx:id="mainBorderPane" prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.AdminController">
     <stylesheets>
         <URL value="@../css/dashboard.css" />
     </stylesheets>
     <top>
       <HBox prefHeight="56.0" prefWidth="600.0" style="-fx-background-color: #501B1D;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="150.0" styleClass="menuButton" text="Dashboard" HBox.hgrow="SOMETIMES" />
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="150.0" styleClass="menuButton" text="Guest Management" HBox.hgrow="SOMETIMES" />
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="150.0" styleClass="menuButton" text="Product Management" HBox.hgrow="SOMETIMES" />
-            <Button mnemonicParsing="false" prefHeight="56.0" prefWidth="150.0" styleClass="menuButton" text="Order Management" HBox.hgrow="SOMETIMES" />
+            <Button mnemonicParsing="false" onAction="#dashboardClick" prefHeight="56.0" prefWidth="150.0" styleClass="menuButton" text="Dashboard" HBox.hgrow="SOMETIMES" />
+            <Button mnemonicParsing="false" onAction="#guestManagementClick" prefHeight="56.0" prefWidth="150.0" styleClass="menuButton" text="Guest Management" HBox.hgrow="SOMETIMES" />
+            <Button mnemonicParsing="false" onAction="#productManagementClick" prefHeight="56.0" prefWidth="150.0" styleClass="menuButton" text="Product Management" HBox.hgrow="SOMETIMES" />
+            <Button mnemonicParsing="false" onAction="#orderManagementClick" prefHeight="56.0" prefWidth="150.0" styleClass="menuButton" text="Order Management" HBox.hgrow="SOMETIMES" />
             <Button mnemonicParsing="false" onAction="#logoutClick" prefHeight="56.0" prefWidth="150.0" styleClass="menuButton" text="Logout" />
          </children>
          <BorderPane.margin>
