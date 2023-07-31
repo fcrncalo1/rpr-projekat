@@ -55,17 +55,17 @@ public class AddUpdateProductController {
                 addupdateGridPane.getScene().getWindow().hide();
             } else {
                 Boolean flag = true;
-                if (nameField.textProperty().getValue().trim().length() == 0) {
+                if (nameField.textProperty().getValue() == null || nameField.textProperty().getValue().length() == 0) {
                     nameField.getStyleClass().removeAll("poljeIspravno");
                     nameField.getStyleClass().add("poljeNijeIspravno");
                     flag = false;
                 }
-                if (priceField.textProperty().getValue().trim().length() == 0) {
+                if (priceField.textProperty().getValue() == null || priceField.textProperty().getValue().length() == 0 || priceField.textProperty().getValue().equals(String.valueOf(0))) {
                     priceField.getStyleClass().removeAll("poljeIspravno");
                     priceField.getStyleClass().add("poljeNijeIspravno");
                     flag = false;
                 }
-                if (quantityField.textProperty().getValue().trim().length() == 0) {
+                if (quantityField.textProperty().getValue() == null || quantityField.textProperty().getValue().length() == 0 || priceField.textProperty().getValue().equals(String.valueOf(0))) {
                     quantityField.getStyleClass().removeAll("poljeIspravno");
                     quantityField.getStyleClass().add("poljeNijeIspravno");
                     flag = false;
