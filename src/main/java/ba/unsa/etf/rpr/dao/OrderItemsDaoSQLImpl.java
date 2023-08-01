@@ -8,6 +8,10 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * OrderItems DAO SQL implementation
+ * @author Faris Crnčalo
+ */
 public class OrderItemsDaoSQLImpl extends AbstractDao<OrderItems> implements OrderItemsDao {
 
     public OrderItemsDaoSQLImpl() {

@@ -2,6 +2,10 @@ package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
 
+/**
+ * Contains items from the order
+ * @author Faris Crnčalo
+ */
 public class OrderItems implements Idable{
 
     private int id;

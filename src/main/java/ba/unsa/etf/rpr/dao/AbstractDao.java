@@ -5,6 +5,9 @@ import ba.unsa.etf.rpr.domain.Idable;
 import java.sql.*;
 import java.util.*;
 
+/**
+ * Abstract class for CRUD methods required in the DAO layer
+ */
 public abstract class AbstractDao<T extends Idable> implements Dao<T>{
     protected static Connection connection;
     private String tableName;
@@ -25,14 +28,35 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         }
     }
 
+    /**
+     * A method that gives the connection attribute of the class
+     * @return connection attribute
+     */
     public Connection getConnection(){
         return this.connection;
     }
 
+    /**
+     * Method for mapping ResultSet into Object
+     * @param rs
+     * @return specified table Bean
+     * @throws SQLException
+     */
     public abstract T row2object(ResultSet rs) throws SQLException;
 
+    /**
+     * Method for mapping Object into Map
+     * @param object bean
+     * @return key,value map of Object
+     */
     public abstract Map<String, Object> object2row(T object);
 
+    /**
+     * Method that returns a row with the given id
+     * @param id
+     * @return object row from the database
+     * @throws SQLException
+     */
     public T getById(int id) throws SQLException {
         String query = "SELECT * FROM "+this.tableName+" WHERE id = ?";
         try {
@@ -51,6 +75,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         }
     }
 
+    /**
+     * Method that returns all records from a certain table
+     * @return list of objects
+     * @throws SQLException
+     */
     public List<T> getAll() throws SQLException {
         String query = "SELECT * FROM "+ tableName;
         List<T> results = new ArrayList<T>();
@@ -68,6 +97,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         }
     }
 
+    /**
+     * Method that deletes a record from the table with the given id
+     * @param id
+     * @throws SQLException
+     */
     public void delete(int id) throws SQLException {
         String sql = "DELETE FROM "+tableName+" WHERE id = ?";
         try{
@@ -79,6 +113,12 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         }
     }
 
+    /**
+     * Method that adds a record to the database table
+     * @param item
+     * @return object item
+     * @throws SQLException
+     */
     public T add(T item) throws SQLException{
         Map<String, Object> row = object2row(item);
         Map.Entry<String, String> columns = prepareInsertParts(row);
@@ -109,6 +149,12 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         }
     }
 
+    /**
+     * Method that updates a record from a table in the database
+     * @param item
+     * @return object item
+     * @throws SQLException
+     */
     public T update(T item) throws SQLException{
         Map<String, Object> row = object2row(item);
         String updateColumns = prepareUpdateParts(row);
@@ -135,6 +181,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         }
     }
 
+    /**
+     * Helper method for creating INSERT statements
+     * @param row map of attribute names and values
+     * @return key,value entry eg. (id, firstName, lastName, ...) ?,?,?, ...
+     */
     private Map.Entry<String, String> prepareInsertParts(Map<String, Object> row){
         StringBuilder columns = new StringBuilder();
         StringBuilder questions = new StringBuilder();
@@ -153,7 +204,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T>{
         return new AbstractMap.SimpleEntry<String,String>(columns.toString(), questions.toString());
     }
 
-
+    /**
+     * Method for creating a query for UPDATE
+     * @param row
+     * @return String in id=?,column1=?... format
+     */
     private String prepareUpdateParts(Map<String, Object> row){
         StringBuilder columns = new StringBuilder();
 

@@ -21,6 +21,9 @@ import java.sql.SQLException;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
+/**
+ * JavaFX class for product management section
+ */
 public class ProductMgmtController {
     public TableView productsTable;
     public TableColumn idColumn;
@@ -37,10 +40,18 @@ public class ProductMgmtController {
         fillProducts();
     }
 
+    /**
+     * Add button event handler
+     * @param actionEvent
+     */
     public void addButtonClick(ActionEvent actionEvent) {
         addupdateScene(null);
     }
 
+    /**
+     * Update button event handler
+     * @param actionEvent
+     */
     public void updateButtonClick(ActionEvent actionEvent) {
         Products selectedProduct = (Products) productsTable.getSelectionModel().getSelectedItem();
         if (selectedProduct == null) return;
@@ -48,6 +59,10 @@ public class ProductMgmtController {
         addupdateScene(pId);
     }
 
+    /**
+     * Delete button event handler
+     * @param actionEvent
+     */
     public void deleteButtonClick(ActionEvent actionEvent) {
         Products selectedProduct = (Products) productsTable.getSelectionModel().getSelectedItem();
         if (selectedProduct == null) return;
@@ -63,6 +78,9 @@ public class ProductMgmtController {
         }
     }
 
+    /**
+     * Fills products table with records form the database
+     */
     private void fillProducts() {
         try {
             productsTable.setItems(FXCollections.observableList(DaoFactory.productsDao().getAll()));
@@ -70,6 +88,11 @@ public class ProductMgmtController {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Opens window for guest editing or adding
+     * @param pId product id
+     */
     private void addupdateScene(Integer pId) {
         try {
             Stage stage = new Stage();

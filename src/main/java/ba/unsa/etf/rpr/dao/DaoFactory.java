@@ -1,5 +1,9 @@
 package ba.unsa.etf.rpr.dao;
 
+/**
+ * Factory method for DAO implementations
+ * @author Faris Crnčalo
+ */
 public class DaoFactory {
 
     private static final OrderItemsDao orderItemsDao = new OrderItemsDaoSQLImpl();

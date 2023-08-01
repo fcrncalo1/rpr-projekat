@@ -10,6 +10,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class OrdersManager {
+    /**
+     * Deletes an order with the given id
+     * @param id
+     * @throws OrdersException
+     */
     public void delete(int id) throws OrdersException {
         try {
             DaoFactory.ordersDao().delete(id);
@@ -18,6 +23,12 @@ public class OrdersManager {
         }
     }
 
+    /**
+     * Adds an order to the database
+     * @param o
+     * @return orders object
+     * @throws OrdersException
+     */
     public Orders add(Orders o) throws OrdersException {
         try {
             DaoFactory.ordersDao().add(o);
@@ -27,6 +38,12 @@ public class OrdersManager {
         return o;
     }
 
+    /**
+     * Updates an order from the database
+     * @param o
+     * @return orders object
+     * @throws OrdersException
+     */
     public Orders update(Orders o) throws OrdersException{
         try {
             return DaoFactory.ordersDao().update(o);
@@ -35,6 +52,11 @@ public class OrdersManager {
         }
     }
 
+    /**
+     * Returns all orders from the database
+     * @return list of orders
+     * @throws OrdersException
+     */
     public List<Orders> getAll() throws OrdersException {
         try {
             return DaoFactory.ordersDao().getAll();
@@ -43,6 +65,12 @@ public class OrdersManager {
         }
     }
 
+    /**
+     * Returns an order with the given id
+     * @param uId
+     * @return orders object
+     * @throws OrdersException
+     */
     public Orders getById(int uId) throws OrdersException {
         try {
             return DaoFactory.ordersDao().getById(uId);

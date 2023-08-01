@@ -15,6 +15,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.SQLException;
 
+/**
+ * JavaFX class for order management section
+ * @author Faris Crnčalo
+ */
 public class OrderMgmtController {
     public TableView ordersTable;
 
@@ -32,6 +36,10 @@ public class OrderMgmtController {
         fillOrders();
     }
 
+    /**
+     * Delete button event handler
+     * @param actionEvent
+     */
     public void deleteButtonClick(ActionEvent actionEvent) {
         Orders order = (Orders) ordersTable.getSelectionModel().getSelectedItem();
         if(order == null) return;
@@ -46,6 +54,10 @@ public class OrderMgmtController {
             }
         }
     }
+
+    /**
+     * Fills orders table with records from the database
+     */
     public void fillOrders() {
         try {
             ordersTable.setItems(FXCollections.observableList(DaoFactory.ordersDao().getAll()));

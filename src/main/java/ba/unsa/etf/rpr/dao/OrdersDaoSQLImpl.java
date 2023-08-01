@@ -8,6 +8,10 @@ import java.sql.*;
 import java.sql.Date;
 import java.util.*;
 
+/**
+ * Orders DAO SQL implementation
+ * @author Faris Crnčalo
+ */
 public class OrdersDaoSQLImpl extends AbstractDao<Orders> implements OrdersDao {
 
 

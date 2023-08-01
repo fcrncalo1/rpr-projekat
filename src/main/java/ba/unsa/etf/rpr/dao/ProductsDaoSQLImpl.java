@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * Products DAO SQL implementation
+ * @author Faris Crnčalo
+ */
 public class ProductsDaoSQLImpl extends AbstractDao<Products> implements ProductsDao {
 
     public ProductsDaoSQLImpl() {

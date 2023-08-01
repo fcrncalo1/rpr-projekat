@@ -7,6 +7,10 @@ import javafx.beans.property.SimpleObjectProperty;
 import java.sql.Date;
 import java.time.LocalDate;
 
+/**
+ * Model class for 2 way data binding
+ * @author Faris Crnčalo
+ */
 public class OrdersModel {
     public SimpleObjectProperty<Users> user = new SimpleObjectProperty<>();
     public SimpleObjectProperty<LocalDate> orderDate = new SimpleObjectProperty<>();

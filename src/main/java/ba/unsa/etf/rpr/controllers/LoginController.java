@@ -19,6 +19,10 @@ import java.io.IOException;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * JavaFX class for login window
+ * @author Faris Crnčalo
+ */
 public class LoginController {
     public TextField fieldUsername;
     public PasswordField fieldPassword;
@@ -55,6 +59,11 @@ public class LoginController {
         });
     }
 
+    /**
+     * Login button event handler
+     * @param actionEvent
+     * @throws IOException
+     */
     public void loginBttnClick(ActionEvent actionEvent) throws IOException {
         Users user = null;
         if (fieldUsername.getText().isEmpty() || fieldPassword.getText().isEmpty()) {

@@ -12,6 +12,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import org.apache.commons.validator.routines.EmailValidator;
 
+/**
+ * JavaFX class for creating and updating Users objects
+ * @author Faris Crnčalo
+ */
 public class AddUpdateUserController {
     public TextField firstNameField;
     public TextField lastNameField;
@@ -61,6 +65,10 @@ public class AddUpdateUserController {
         }
     }
 
+    /**
+     * OK button event handler
+     * @param actionEvent
+     */
     public void okClick(ActionEvent actionEvent) {
         Users u = usersModel.toUser();
         try {
@@ -122,6 +130,10 @@ public class AddUpdateUserController {
         }
     }
 
+    /**
+     * Cancel button event handler
+     * @param actionEvent
+     */
     public void cancelClick(ActionEvent actionEvent) {
         addupdateGridPane.getScene().getWindow().hide();
     }

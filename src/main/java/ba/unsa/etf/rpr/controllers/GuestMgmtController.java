@@ -21,6 +21,10 @@ import java.sql.SQLException;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
+/**
+ * JavaFX class for guest management section
+ * @author Faris Crnčalo
+ */
 public class GuestMgmtController {
     public TableView usersTable;
     public TableColumn<Users,String> idColumn;
@@ -47,10 +51,19 @@ public class GuestMgmtController {
         passwordColumn.setCellValueFactory(new PropertyValueFactory<>("password"));
         fillGuests();
     }
+
+    /**
+     * Add button event handler
+     * @param actionEvent
+     */
     public void addButtonClick(ActionEvent actionEvent) {
         addupdateScene(null);
     }
 
+    /**
+     * Update button event handler
+     * @param actionEvent
+     */
     public void updateButtonClick(ActionEvent actionEvent) {
         Users selectedUser = (Users) usersTable.getSelectionModel().getSelectedItem();
         if(selectedUser == null) return;
@@ -58,6 +71,10 @@ public class GuestMgmtController {
         addupdateScene(uId);
     }
 
+    /**
+     * Delete button event handler
+     * @param actionEvent
+     */
     public void deleteButtonClick(ActionEvent actionEvent) {
         Users selectedUser = (Users) usersTable.getSelectionModel().getSelectedItem();
         if (selectedUser == null) return;
@@ -73,6 +90,9 @@ public class GuestMgmtController {
         }
     }
 
+    /**
+     * Fills guests table with records from the database
+     */
     public void fillGuests() {
         try {
             usersTable.setItems(FXCollections.observableList(DaoFactory.usersDao().getAll()));
@@ -81,6 +101,10 @@ public class GuestMgmtController {
         }
     }
 
+    /**
+     * Opens window for user editing or adding
+     * @param uId user id
+     */
     private void addupdateScene(Integer uId){
         try {
             Stage stage = new Stage();

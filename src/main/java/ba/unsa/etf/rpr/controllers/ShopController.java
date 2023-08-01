@@ -16,6 +16,10 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * JavaFX class for guest shop section
+ * @author Faris Crnčalo
+ */
 public class ShopController {
 
     private String loggedUser;
@@ -53,6 +57,10 @@ public class ShopController {
         fillProducts();
     }
 
+    /**
+     * Add to cart button event handler
+     * @param actionEvent
+     */
     public void addToCartClick(ActionEvent actionEvent) {
         Products product = (Products) productTable.getSelectionModel().getSelectedItem();
         if(product == null || quantityText.getText().trim().isEmpty() || product.getQuantity() < Integer.parseInt(quantityText.getText()) || Integer.parseInt(quantityText.getText()) == 0)
@@ -63,6 +71,10 @@ public class ShopController {
         priceText.setText(String.valueOf(Double.parseDouble(priceText.getText()) + Double.parseDouble(quantityText.getText())*product.getPrice()));
     }
 
+    /**
+     * Remove button event handler
+     * @param actionEvent
+     */
     public void removeButtonClick(ActionEvent actionEvent) {
         Products selectedProduct = (Products) shoppingCart.getSelectionModel().getSelectedItem();
         if (selectedProduct == null) return;
@@ -71,6 +83,10 @@ public class ShopController {
         shoppingCart.refresh();
     }
 
+    /**
+     * Create order button event handler
+     * @param actionEvent
+     */
     public void createOrderClick(ActionEvent actionEvent) {
         if (shoppingCart.getItems().isEmpty()) return;
         try {
@@ -102,6 +118,10 @@ public class ShopController {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Fills products table with records from the database
+     */
     public void fillProducts() {
         try {
             productTable.setItems(FXCollections.observableList(DaoFactory.productsDao().getAll()));

@@ -8,12 +8,22 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UsersManager {
+    /**
+     * Validates user's name
+     * @param u
+     * @throws UsersException
+     */
     public void validate(Users u) throws UsersException {
         if (u.getFirstName() == null || u.getFirstName().trim().length() == 0 || u.getLastName().trim().length() == 0) {
             throw new UsersException("Name must be at least one character!");
         }
     }
 
+    /**
+     * Deletes user with given id
+     * @param id
+     * @throws UsersException
+     */
     public void delete(int id) throws UsersException {
         try {
             DaoFactory.usersDao().delete(id);
@@ -22,6 +32,12 @@ public class UsersManager {
         }
     }
 
+    /**
+     * Adds a user to the database
+     * @param u
+     * @return users object
+     * @throws UsersException
+     */
     public Users add(Users u) throws UsersException {
         try {
             validate(u);
@@ -32,6 +48,12 @@ public class UsersManager {
         return u;
     }
 
+    /**
+     * Updates a user from the database
+     * @param u
+     * @return users object
+     * @throws UsersException
+     */
     public Users update(Users u) throws UsersException{
         try {
             return DaoFactory.usersDao().update(u);
@@ -40,6 +62,11 @@ public class UsersManager {
         }
     }
 
+    /**
+     * Returns all users from the database
+     * @return list of users
+     * @throws UsersException
+     */
     public List<Users> getAll() throws UsersException {
         try {
             return DaoFactory.usersDao().getAll();
@@ -48,6 +75,12 @@ public class UsersManager {
         }
     }
 
+    /**
+     * Returns a user with the given id
+     * @param uId
+     * @return users object
+     * @throws UsersException
+     */
     public Users getById(int uId) throws UsersException {
         try {
             return DaoFactory.usersDao().getById(uId);

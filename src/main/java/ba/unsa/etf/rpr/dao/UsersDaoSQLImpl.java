@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * Users DAO SQL implementation
+ * @author Faris Crnčalo
+ */
 public class UsersDaoSQLImpl extends AbstractDao<Users> implements UsersDao {
 
 

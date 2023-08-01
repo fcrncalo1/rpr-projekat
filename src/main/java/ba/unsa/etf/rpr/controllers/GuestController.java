@@ -16,11 +16,20 @@ import java.io.IOException;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * JavaFX class for guest dashboard navigation
+ * @author Faris Crnčalo
+ */
 public class GuestController {
     public BorderPane mainBorderPane;
     public Pane mainPane;
     public Label nameLabel;
 
+    /**
+     * Logout button event handler
+     * @param actionEvent
+     * @throws IOException
+     */
     public void logoutClick(ActionEvent actionEvent) throws IOException {
         Node n = (Node) actionEvent.getSource();
         Stage stage1 = (Stage) n.getScene().getWindow();
@@ -34,10 +43,19 @@ public class GuestController {
         stage.show();
     }
 
+    /**
+     * Dashboard button event handler
+     * @param actionEvent
+     */
     public void dashboardClick(ActionEvent actionEvent) {
         mainBorderPane.setCenter(mainPane);
     }
 
+    /**
+     * Shop button event handler
+     * @param actionEvent
+     * @throws IOException
+     */
     public void shopClick(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/shop.fxml"));
         GridPane gridPane = loader.load();
@@ -47,6 +65,11 @@ public class GuestController {
         mainBorderPane.setCenter(gridPane);
     }
 
+    /**
+     * Your orders button event handler
+     * @param actionEvent
+     * @throws IOException
+     */
     public void yourOrdersClick(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/your_orders.fxml"));
         GridPane gridPane = loader.load();

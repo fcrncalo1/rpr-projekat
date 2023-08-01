@@ -3,6 +3,10 @@ package ba.unsa.etf.rpr.domain;
 import java.sql.Date;
 import java.util.Objects;
 
+/**
+ * Contains order details
+ * @author Faris Crnčalo
+ */
 public class Orders implements Idable{
 
     private int id;

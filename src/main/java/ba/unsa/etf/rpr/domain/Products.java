@@ -2,6 +2,10 @@ package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
 
+/**
+ * Contains product details
+ * @author Faris Crnčalo
+ */
 public class Products implements Idable{
 
     private int id;

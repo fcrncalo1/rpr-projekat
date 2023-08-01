@@ -3,6 +3,10 @@ package ba.unsa.etf.rpr.model;
 import ba.unsa.etf.rpr.domain.Users;
 import javafx.beans.property.SimpleStringProperty;
 
+/**
+ * Model class for 2 way data binding
+ * @author Faris Crnčalo
+ */
 public class UsersModel {
     public SimpleStringProperty firstNameField = new SimpleStringProperty("");
     public SimpleStringProperty  lastNameField = new SimpleStringProperty("");

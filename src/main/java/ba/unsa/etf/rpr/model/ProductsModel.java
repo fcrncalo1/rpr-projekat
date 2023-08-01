@@ -5,6 +5,10 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
+/**
+ * Model class for 2 way data binding
+ * @author Faris Crnčalo
+ */
 public class ProductsModel {
     public SimpleStringProperty nameField = new SimpleStringProperty();
     public SimpleDoubleProperty priceField = new SimpleDoubleProperty();

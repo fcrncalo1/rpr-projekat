@@ -12,6 +12,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.SQLException;
 
+/**
+ * JavaFX class for your orders section
+ * @author Faris Crnčalo
+ */
 public class YourOrdersController {
 
     private String loggedUser;
@@ -33,6 +37,10 @@ public class YourOrdersController {
         orderDateColumn.setCellValueFactory(new PropertyValueFactory<>("orderDate"));
     }
 
+    /**
+     * Load button event handler, loads logged users orders
+     * @param actionEvent
+     */
     public void loadButtonClick(ActionEvent actionEvent) {
         if(ordersTable.getItems().isEmpty()) {
             Users user = DaoFactory.usersDao().getByUsername(loggedUser);

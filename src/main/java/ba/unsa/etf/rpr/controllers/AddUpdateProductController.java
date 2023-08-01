@@ -13,6 +13,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.util.converter.NumberStringConverter;
 
+/**
+ * JavaFX class for creating and updating Products objects
+ * @author Faris Crnčalo
+ */
 public class AddUpdateProductController {
     public TextField nameField;
     public TextField priceField;
@@ -46,6 +50,11 @@ public class AddUpdateProductController {
             }
         }
     }
+
+    /**
+     * OK button event handler
+     * @param actionEvent
+     */
     public void okClick(ActionEvent actionEvent) {
         Products p = productsModel.toProduct();
         try {
@@ -81,6 +90,10 @@ public class AddUpdateProductController {
         }
     }
 
+    /**
+     * Cancel button event handler
+     * @param actionEvent
+     */
     public void cancelClick(ActionEvent actionEvent) {
         addupdateGridPane.getScene().getWindow().hide();
     }

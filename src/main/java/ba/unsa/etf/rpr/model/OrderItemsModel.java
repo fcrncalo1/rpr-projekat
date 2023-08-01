@@ -6,6 +6,10 @@ import ba.unsa.etf.rpr.domain.Products;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
+/**
+ * Model class for 2 way data binding
+ * @author Faris Crnčalo
+ */
 public class OrderItemsModel {
     public SimpleObjectProperty<Orders> order = new SimpleObjectProperty<>();
     public SimpleObjectProperty<Products> product = new SimpleObjectProperty<>();

@@ -19,7 +19,11 @@ import ba.unsa.etf.rpr.exceptions.OrdersException;
 import org.apache.commons.cli.*;
 import org.mockito.internal.matchers.Or;
 
-public class App 
+/**
+ * Command line interface that supports CRUD operations
+ * @author Faris Crnčalo
+ */
+public class App
 {
     private static final Option getUsers = new Option("getU","get-users",false,"Printing all users from database");
     private static final Option getProducts = new Option("getP","get-products",false,"Printing all products from database");
