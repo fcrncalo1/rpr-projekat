@@ -10,6 +10,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ProductsManager {
+
+    public void validate(Products p) throws ProductsException {
+        if(p.getQuantity() == 0){
+            throw new ProductsException("Quantity must be greater than zero!");
+        }
+    }
     /**
      * Deletes a product with the given id
      * @param id
@@ -31,6 +37,7 @@ public class ProductsManager {
      */
     public Products add(Products p) throws ProductsException {
         try {
+            validate(p);
             DaoFactory.productsDao().add(p);
         } catch (SQLException e) {
             throw new ProductsException(e.getMessage());
